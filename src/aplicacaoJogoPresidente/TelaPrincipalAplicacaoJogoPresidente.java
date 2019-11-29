@@ -15,6 +15,10 @@ public class TelaPrincipalAplicacaoJogoPresidente extends javax.swing.JFrame {
      * Creates new form TelaPrincipalAplicacaoJogoPresidente
      */
     public TelaPrincipalAplicacaoJogoPresidente() {
+    int y=2;
+     int x= 1;
+       
+        
         initComponents();
     }
 
@@ -30,6 +34,13 @@ public class TelaPrincipalAplicacaoJogoPresidente extends javax.swing.JFrame {
         botaoOpcao1 = new javax.swing.JButton();
         botaoOpcao2 = new javax.swing.JButton();
         voltar = new javax.swing.JButton();
+        jprogressEducacao = new javax.swing.JProgressBar();
+        jProgressSeguranca = new javax.swing.JProgressBar();
+        jProgressEconomia = new javax.swing.JProgressBar();
+        jProgressAprovacao = new javax.swing.JProgressBar();
+        jProgressSaude = new javax.swing.JProgressBar();
+        jProgressTransporte = new javax.swing.JProgressBar();
+        jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -40,6 +51,11 @@ public class TelaPrincipalAplicacaoJogoPresidente extends javax.swing.JFrame {
         botaoOpcao1.setBackground(new java.awt.Color(255, 255, 255));
         botaoOpcao1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         botaoOpcao1.setText("OPÇÃO 1");
+        botaoOpcao1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoOpcao1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(botaoOpcao1);
         botaoOpcao1.setBounds(470, 320, 290, 40);
 
@@ -60,6 +76,31 @@ public class TelaPrincipalAplicacaoJogoPresidente extends javax.swing.JFrame {
         getContentPane().add(voltar);
         voltar.setBounds(680, 420, 80, 23);
 
+        jprogressEducacao.setBackground(new java.awt.Color(255, 255, 255));
+        jprogressEducacao.setForeground(new java.awt.Color(102, 255, 255));
+        getContentPane().add(jprogressEducacao);
+        jprogressEducacao.setBounds(350, 10, 140, 40);
+        jprogressEducacao.setValue(50);
+        getContentPane().add(jProgressSeguranca);
+        jProgressSeguranca.setBounds(350, 60, 140, 40);
+        jProgressSeguranca.setValue(50);
+
+        jProgressEconomia.setForeground(new java.awt.Color(51, 255, 51));
+        getContentPane().add(jProgressEconomia);
+        jProgressEconomia.setBounds(600, 10, 140, 40);
+        jProgressEconomia.setValue(50);
+        getContentPane().add(jProgressAprovacao);
+        jProgressAprovacao.setBounds(600, 60, 140, 40);
+        jProgressAprovacao.setValue(50);
+        getContentPane().add(jProgressSaude);
+        jProgressSaude.setBounds(90, 10, 140, 40);
+        jProgressSaude.setValue(50);
+        getContentPane().add(jProgressTransporte);
+        jProgressTransporte.setBounds(90, 60, 140, 40);
+        jProgressTransporte.setValue(50);
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(710, 154, 0, 10);
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagem/ImagemPrincpalJogo.jpeg"))); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 800, 444);
@@ -67,12 +108,28 @@ public class TelaPrincipalAplicacaoJogoPresidente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
     private void voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarActionPerformed
 dispose();
 TelaInicioAplicacaoJogo inicial = new TelaInicioAplicacaoJogo();
 inicial.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_voltarActionPerformed
+
+
+    private void botaoOpcao1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoOpcao1ActionPerformed
+
+   
+    jprogressEducacao.setValue(jprogressEducacao.getValue()+5);
+        jProgressEconomia.setValue(jProgressEconomia.getValue()-5);
+        jProgressAprovacao.setValue(jProgressAprovacao.getValue()+10);
+        jProgressSeguranca.setValue(jProgressSeguranca.getValue()-10);
+        jProgressTransporte.setValue(jProgressTransporte.getValue()+3);
+        jProgressSaude.setValue(jProgressSaude.getValue()-3);
+    
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoOpcao1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -113,6 +170,13 @@ inicial.setVisible(true);
     private javax.swing.JButton botaoOpcao1;
     private javax.swing.JButton botaoOpcao2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JProgressBar jProgressAprovacao;
+    private javax.swing.JProgressBar jProgressEconomia;
+    private javax.swing.JProgressBar jProgressSaude;
+    private javax.swing.JProgressBar jProgressSeguranca;
+    private javax.swing.JProgressBar jProgressTransporte;
+    private javax.swing.JProgressBar jprogressEducacao;
     private javax.swing.JButton voltar;
     // End of variables declaration//GEN-END:variables
 }

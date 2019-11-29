@@ -77,7 +77,7 @@ creditos.setVisible(true);
 
     private void botaoJogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoJogarActionPerformed
 dispose();
-JOptionPane.showInputDialog("PRESIDENTE");
+String nome=JOptionPane.showInputDialog("PRESIDENTE");
 TelaPrincipalAplicacaoJogoPresidente principal = new TelaPrincipalAplicacaoJogoPresidente();
 principal.setVisible(true);
 
