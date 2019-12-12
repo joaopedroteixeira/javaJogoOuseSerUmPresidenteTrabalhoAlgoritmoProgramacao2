@@ -7,12 +7,14 @@ package aplicacaoJogoPresidente;
 
 import java.util.Random;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Lucas Melo
  */
 public class TelaPrincipalAplicacaoJogoPresidente extends javax.swing.JFrame {
+    private int meses;
 
     /**
      * Creates new form TelaPrincipalAplicacaoJogoPresidente
@@ -24,13 +26,20 @@ public class TelaPrincipalAplicacaoJogoPresidente extends javax.swing.JFrame {
         
         initComponents();
     }
-
+String nome=JOptionPane.showInputDialog("PRESIDENTE");
     public void imagemIcon(){
       Random num = new Random();
       int numero=num.nextInt(36);
-        ImageIcon img = new ImageIcon(getClass().getResource("/imagem/carta/Carta "+numero+".png"));
+        ImageIcon img = new ImageIcon(getClass().getResource("/imagem/cartas/Carta "+numero+".png"));
         jLabel2.setIcon(img);
     }  
+    
+    public void texto(){
+        int meses=3;
+        jLabel4.setText("PRESIDENTE : "+nome);
+        jLabel5.setText(meses+" MESES NA PRESIDENCIA");
+       
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -46,6 +55,8 @@ public class TelaPrincipalAplicacaoJogoPresidente extends javax.swing.JFrame {
         jProgressTransporte = new javax.swing.JProgressBar();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -111,9 +122,21 @@ public class TelaPrincipalAplicacaoJogoPresidente extends javax.swing.JFrame {
         getContentPane().add(jLabel3);
         jLabel3.setBounds(710, 154, 0, 10);
 
-        jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 5));
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(10, 130, 430, 300);
+        jLabel2.setBounds(10, 120, 430, 310);
+
+        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel5.setFont(new java.awt.Font("Arial Black", 1, 20)); // NOI18N
+        jLabel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(450, 210, 340, 60);
+
+        jLabel4.setBackground(new java.awt.Color(0, 255, 255));
+        jLabel4.setFont(new java.awt.Font("Arial Black", 1, 20)); // NOI18N
+        jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(450, 150, 340, 60);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagem/ImagemPrincpalJogo.jpeg"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -132,7 +155,8 @@ inicial.setVisible(true);//visibilidade
 
 
     private void botaoOpcao1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoOpcao1ActionPerformed
-
+  
+    texto();
    //valores testes
   
     imagemIcon();
@@ -185,6 +209,8 @@ imagemIcon();        // TODO add your handling code here:
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JProgressBar jProgressAprovacao;
     private javax.swing.JProgressBar jProgressEconomia;
     private javax.swing.JProgressBar jProgressSaude;

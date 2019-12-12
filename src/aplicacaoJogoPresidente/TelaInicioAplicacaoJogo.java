@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
  * @author Joao pedro,Rafael,Elias e Giovanni.
  */
 public class TelaInicioAplicacaoJogo extends javax.swing.JFrame {
+    
 
     /**
      * Creates new form TelaInicioAplicacaoJogo
@@ -77,13 +78,12 @@ creditos.setVisible(true);
 //acao do botao para ir a tela principal do jogo
     private void botaoJogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoJogarActionPerformed
 dispose();
-String nome=JOptionPane.showInputDialog("PRESIDENTE");
 TelaPrincipalAplicacaoJogoPresidente principal = new TelaPrincipalAplicacaoJogoPresidente();
 principal.setVisible(true);
 
         // TODO add your handling code here:
     }//GEN-LAST:event_botaoJogarActionPerformed
-
+  
     /**
      * @param args the command line arguments
      */
