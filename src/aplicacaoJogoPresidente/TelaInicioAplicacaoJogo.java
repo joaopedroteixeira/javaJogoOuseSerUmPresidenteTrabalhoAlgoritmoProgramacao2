@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Lucas Melo
+ * @author Joao pedro,Rafael,Elias e Giovanni.
  */
 public class TelaInicioAplicacaoJogo extends javax.swing.JFrame {
 
@@ -67,14 +67,14 @@ public class TelaInicioAplicacaoJogo extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+//acao do botao para ir a tela de creditos
     private void botaoCreditosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCreditosActionPerformed
 dispose();
 TelaCreditosAplicacaoJogoPresidente creditos = new TelaCreditosAplicacaoJogoPresidente();
 creditos.setVisible(true);
 // TODO add your handling code here:
     }//GEN-LAST:event_botaoCreditosActionPerformed
-
+//acao do botao para ir a tela principal do jogo
     private void botaoJogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoJogarActionPerformed
 dispose();
 String nome=JOptionPane.showInputDialog("PRESIDENTE");
