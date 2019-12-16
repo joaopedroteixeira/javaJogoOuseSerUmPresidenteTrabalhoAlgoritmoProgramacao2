@@ -14,30 +14,28 @@ import javax.swing.JOptionPane;
  * @author Lucas Melo
  */
 public class TelaPrincipalAplicacaoJogoPresidente extends javax.swing.JFrame {
-    private int meses;
+   
 
     /**
      * Creates new form TelaPrincipalAplicacaoJogoPresidente
      */
     public TelaPrincipalAplicacaoJogoPresidente() {
-    int y=2;
-     int x= 1;
-       
-        
+  
         initComponents();
     }
+  
+    public static int numero,transporte =50,saude=50,educacao=50,seguranca=50,aprovacao=50,economia=50,meses=0,ano=0;
 String nome=JOptionPane.showInputDialog("PRESIDENTE");
     public void imagemIcon(){
       Random num = new Random();
-      int numero=num.nextInt(36);
+     numero=num.nextInt(36);
+    
         ImageIcon img = new ImageIcon(getClass().getResource("/imagem/cartas/Carta "+numero+".png"));
         jLabel2.setIcon(img);
     }  
     
     public void texto(){
-        int meses=3;
-        jLabel4.setText("PRESIDENTE : "+nome);
-        jLabel5.setText(meses+" MESES NA PRESIDENCIA");
+        jLabel4.setText("\tPRESIDENTE : "+nome);
        
     }
     @SuppressWarnings("unchecked")
@@ -99,26 +97,38 @@ String nome=JOptionPane.showInputDialog("PRESIDENTE");
 
         jprogressEducacao.setBackground(new java.awt.Color(255, 255, 255));
         jprogressEducacao.setForeground(new java.awt.Color(102, 255, 255));
+        jprogressEducacao.setStringPainted(true);
         getContentPane().add(jprogressEducacao);
         jprogressEducacao.setBounds(350, 10, 140, 40);
-        jprogressEducacao.setValue(50);
+        jprogressEducacao.setValue(educacao);
+
+        jProgressSeguranca.setStringPainted(true);
         getContentPane().add(jProgressSeguranca);
         jProgressSeguranca.setBounds(350, 60, 140, 40);
-        jProgressSeguranca.setValue(50);
+        jProgressSeguranca.setValue(seguranca);
 
         jProgressEconomia.setForeground(new java.awt.Color(51, 255, 51));
+        jProgressEconomia.setStringPainted(true);
         getContentPane().add(jProgressEconomia);
         jProgressEconomia.setBounds(600, 10, 140, 40);
-        jProgressEconomia.setValue(50);
+        jProgressEconomia.setValue(economia);
+
+        jProgressAprovacao.setStringPainted(true);
         getContentPane().add(jProgressAprovacao);
         jProgressAprovacao.setBounds(600, 60, 140, 40);
-        jProgressAprovacao.setValue(50);
+        jProgressAprovacao.setValue(aprovacao);
+
+        jProgressSaude.setBackground(new java.awt.Color(51, 255, 51));
+        jProgressSaude.setForeground(new java.awt.Color(255, 51, 51));
+        jProgressSaude.setStringPainted(true);
         getContentPane().add(jProgressSaude);
         jProgressSaude.setBounds(90, 10, 140, 40);
-        jProgressSaude.setValue(50);
+        jProgressSaude.setValue(saude);
+
+        jProgressTransporte.setStringPainted(true);
         getContentPane().add(jProgressTransporte);
         jProgressTransporte.setBounds(90, 60, 140, 40);
-        jProgressTransporte.setValue(50);
+        jProgressTransporte.setValue(transporte);
         getContentPane().add(jLabel3);
         jLabel3.setBounds(710, 154, 0, 10);
 
@@ -126,17 +136,16 @@ String nome=JOptionPane.showInputDialog("PRESIDENTE");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(10, 120, 430, 310);
 
-        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel5.setFont(new java.awt.Font("Arial Black", 1, 20)); // NOI18N
-        jLabel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel5.setBackground(new java.awt.Color(0, 255, 153));
+        jLabel5.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        jLabel5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(204, 204, 204), null, null));
         getContentPane().add(jLabel5);
         jLabel5.setBounds(450, 210, 340, 60);
 
-        jLabel4.setBackground(new java.awt.Color(0, 255, 255));
-        jLabel4.setFont(new java.awt.Font("Arial Black", 1, 20)); // NOI18N
-        jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel4.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(450, 150, 340, 60);
+        jLabel4.setBounds(460, 140, 320, 40);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagem/ImagemPrincpalJogo.jpeg"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -161,11 +170,634 @@ inicial.setVisible(true);//visibilidade
   
     imagemIcon();
 
-        // TODO add your handling code here:
+    switch(numero){
+        case 1:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 2:
+            saude-=20;
+            educacao+=10;
+            transporte+=5;
+            seguranca+=5;
+            aprovacao+=10;
+            economia-=5;
+            break;
+         case 3:
+            saude+=5;
+            educacao-=5;
+            transporte-=10;
+            seguranca-=10;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 4:
+            saude-=10;
+            educacao-=100;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 5:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 6:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+       case 7:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+      case 8:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+         case 9:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+      case 10:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 11:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 12:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+         case 13:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+       case 14:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+         case 15:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 16:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 17:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 18:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 19:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 20:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 21:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 22:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+       
+        case 23:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 24:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 25:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 26:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 27:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+         case 28:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+         case 29:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 30:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 31:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 32:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 33:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 34:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+         case 35:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+         case 36:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+            
+    }
+    jProgressSaude.setValue(saude);
+    jProgressTransporte.setValue(transporte);
+    jprogressEducacao.setValue(educacao);
+    jProgressSeguranca.setValue(seguranca);
+    jProgressAprovacao.setValue(aprovacao);
+    jProgressEconomia.setValue(economia);
+    meses+=3;
+     if(meses==12){
+        meses=0;
+        ano+=1;
+        
+    }
+    jLabel5.setText("\t"+ano+"ANO(S) E "+meses+" MESES NA PRESIDENCIA");
+    
+     if(saude==0||educacao==0||transporte==0||seguranca==0||aprovacao==0||economia==0){
+         dispose();
+               InterfacePerdeu perdeu=new InterfacePerdeu() ;
+               perdeu.setVisible(true);
+            }
     }//GEN-LAST:event_botaoOpcao1ActionPerformed
 
     private void botaoOpcao2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoOpcao2ActionPerformed
-imagemIcon();        // TODO add your handling code here:
+imagemIcon(); 
+// TODO add your handling code here:
+switch(numero){
+        case 1:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 2:
+            saude-=20;
+            educacao+=10;
+            transporte+=5;
+            seguranca+=5;
+            aprovacao+=10;
+            economia-=5;
+            break;
+         case 3:
+            saude+=5;
+            educacao-=5;
+            transporte-=10;
+            seguranca-=10;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 4:
+            saude-=10;
+            educacao-=100;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 5:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 6:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+       case 7:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+      case 8:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+         case 9:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+      case 10:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 11:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 12:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+         case 13:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+       case 14:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+         case 15:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 16:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 17:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 18:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 19:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 20:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 21:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 22:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+       
+        case 23:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 24:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 25:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 26:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 27:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+         case 28:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+         case 29:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 30:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 31:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 32:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 33:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+        case 34:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+         case 35:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+         case 36:
+            saude+=20;
+            educacao-=10;
+            transporte-=5;
+            seguranca-=5;
+            aprovacao-=10;
+            economia+=5;
+            break;
+            
+    }
+    jProgressSaude.setValue(saude);
+    jProgressTransporte.setValue(transporte);
+    jprogressEducacao.setValue(educacao);
+    jProgressSeguranca.setValue(seguranca);
+    jProgressAprovacao.setValue(aprovacao);
+    jProgressEconomia.setValue(economia);
+    
+     meses+=3;
+    jLabel5.setText("\t"+ano+"ANO(S)"+meses+" MESES NA PRESIDENCIA");
+    if(meses==12){
+        meses=0;
+        ano+=1;
+        
+    }
+     if(saude==0||educacao==0||transporte==0||seguranca==0||aprovacao==0||economia==0){
+         dispose();
+               InterfacePerdeu perdeu=new InterfacePerdeu() ;
+               perdeu.setVisible(true);
+            }
+                                        
     }//GEN-LAST:event_botaoOpcao2ActionPerformed
 
     /**
